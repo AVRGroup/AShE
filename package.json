@@ -1,0 +1,35 @@
+{
+  "name": "arshadow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "public/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon public/server.js",
+    "startNodemon": "nodemon public/server.js",
+    "postinstall": "pip3 install -r requirements.txt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrelbdutra/ARShadow.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrelbdutra/ARShadow/issues"
+  },
+  "homepage": "https://github.com/andrelbdutra/ARShadow#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "canvas": "^2.11.2",
+    "ejs": "^3.1.9",
+    "bootstrap": "^5.3.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1",
+    "fs": "^0.0.1-security",
+    "gl": "^6.0.2",
+    "three": "^0.158.0",
+    "three-canvas-renderer": "^2.0.0"
+  }
+}

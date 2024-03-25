@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>ARShadow</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<!-- include three.js library -->
+  <script src="https://unpkg.com/three@0.126.0/build/three.min.js"></script>
+	<script src='js/OBJLoader.js'></script>
+	<script src='js/MTLLoader.js'></script>
+  <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+	<!-- include jsartookit -->
+	<script src="jsartoolkit5/artoolkit.min.js"></script>
+	<script src="jsartoolkit5/artoolkit.api.js"></script>
+	<!-- include threex.artoolkit -->
+	<script src="threex/threex-artoolkitsource.js"></script>
+	<script src="threex/threex-artoolkitcontext.js"></script>
+	<script src="threex/threex-arbasecontrols.js"></script>
+	<script src="threex/threex-armarkercontrols.js"></script>
+	<!-- include jQuery -->
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar.js"></script>
+  <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>  
+<!--
+  <script type="importmap"> 
+    {"imports": {"three": "./build/three.module.js"}} 
+  </script> 
+  -->
+        <!-- <input type="file" accept="image/*" capture="camera"> -->
+        <div class="row floating-select">
+          <div class="col-2">
+            <select id="select" class="form-select" aria-label="Default select example">
+              <option value="0" selected>Fast</option>
+              <option value="1">Balanced</option>
+              <option value="2">Accurate</option>
+            </select>
+          </div>
+        </div>
+        <div class="row floating-select2">
+          <div class="col-2">
+            <select id="select2" class="form-select" aria-label="Default select example">
+              <option id="selectOption" value="0" selected>camera</option>
+              <option id="selectOption" value="1">imagem 1</option>
+              <option id="selectOption" value="2">imagem 2</option>
+              <option id="selectOption" value="3">video 1</option>
+            </select>
+          </div>
+        </div>
+        <!--<button action="https://192.168.100.5:3000/threejs/" method="POST" onclick="sendToServer();" id="takePhotoBtn" class="material-icons floating-btn-take-photo">photo_camera</button>-->
+        <div class="floating-sendBtn">
+          <form id="submitButton" action="/threejs" method="POST">
+            <input type="text" name="scene" style="display: none">
+            <input class="floating-btn-take-photo material-icons" id="submitButtonInput"type="button" value="photo_camera">
+          </form>
+        </div>
+        <div id="result"></div>
+        <button id="returnButton" class="material-icons floating-btn-return">arrow_back</button>
+        <div class="row floating-select2">
+          <div class="col-2">
+            <select id="select3" class="form-select" aria-label="Default select example">
+              <option id="selectOption" value="0" selected>cube</option>
+              <option id="selectOption" value="1">basket</option>
+              <option id="selectOption" value="2">cub</option>
+              <option id="selectOption" value="3">dog</option>
+              <option id="selectOption" value="4">house</option>
+              <option id="selectOption" value="5">statue</option>
+              <option id="selectOption" value="6">Goose</option>
+            </select>
+          </div>
+        </div>
+        <!--<button id="switchCameraBtn" class="material-icons floating-btn-switch-camera">switch_camera</button>-->
+        <!--<canvas id="floating-canvas" class="floating-canvas"></canvas>-->
+    <!--<script type="module" src="./arModule.js"></script>-->
+    <script type="module" src="./ar-app.js"></script>
+</body>
+</html>
