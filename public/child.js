@@ -1,4 +1,5 @@
 const THREE = require("three-canvas-renderer");
+const { performance } = require('perf_hooks');
 const gl = require("gl");
 const {createCanvas, loadImage} = require("canvas");
 
