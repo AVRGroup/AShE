@@ -89,6 +89,8 @@ app.post("/threejs", async (req, res) =>
     py.stdout.on("data", (pyData) =>
     {
         console.log((id < 10 ? "0" : "") + id + ": got python output");
+        const output = pyData.toString().trim();
+        console.log("Python output:", output);
         pyData = pyData.toString();
         var contour = pyData.split(" ");
         if (isNaN(contour[0]))
@@ -130,6 +132,12 @@ app.post("/threejs", async (req, res) =>
             });
         }
         py.kill();
+    });
+    py.stderr.on("data", (data) => {
+      console.error("Python error output:", data.toString());
+    });
+    py.on('close', (code) => {
+      console.log(`Python script exited with code ${code}`);
     });
 });
 
