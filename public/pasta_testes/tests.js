@@ -45,7 +45,7 @@ scene.add(markerPlane);
 
 // Adicionar cilindro esquerdo
 var leftCylinderGeometry = new THREE.CylinderGeometry(0.75, 0.75, 3, 32);
-var leftCylinderMaterial = new THREE.MeshStandardMaterial({ color: 0xADD8E6 }); // Cinza escuro
+var leftCylinderMaterial = new THREE.MeshStandardMaterial({ color: 0x006400 }); // Cinza escuro
 var leftCylinder = new THREE.Mesh(leftCylinderGeometry, leftCylinderMaterial);
 leftCylinder.position.set(-3, 1.5, 0); // Posicionar à esquerda do marcador
 leftCylinder.castShadow = true; // Permitir que o cilindro projete sombras
@@ -114,7 +114,7 @@ scene.add(leftCylinder);
 
 // Adicionar cubo à direita do marcador
 var rightCubeGeometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
-var rightCubeMaterial = new THREE.MeshStandardMaterial({ color: 0xD8BFD8 }); // Cinza escuro
+var rightCubeMaterial = new THREE.MeshStandardMaterial({ color: 0x8B0000 }); // Cinza escuro
 var rightCube = new THREE.Mesh(rightCubeGeometry, rightCubeMaterial);
 //rightCube.position.set(2, 0.75, 3); // Posicionar à direita do marcador
 rightCube.position.set(3, 0.75, 0); // Posicionar à direita do marcador
@@ -129,7 +129,7 @@ var wood = new THREE.MeshLambertMaterial({map: loader.load("wood.png")});
 var cube   = new THREE.BoxGeometry(vObjHeight, vObjHeight * vObjRatio, vObjHeight);
 var vObj        = new THREE.Mesh(cube,   wood);
 vObj.castShadow = true;
-scene.add(vObj)
+//scene.add(vObj)
 
 vObj.position.set(0, vObjRatio * vObjHeight / 2, 0);
 

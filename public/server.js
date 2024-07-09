@@ -97,9 +97,11 @@ app.post("/threejs", async (req, res) =>
             res.send("0 1 0");
         else
         {
+          /*
             console.log((id < 10 ? "0" : "") + id + ": started js")
             var result = "vazio";
             //console.log({__dirname});
+
             var child = spawn("node", [__dirname + "/child.js", pyData, req.body.scene]);
             //console.log("node child.js " + pyData + " " + req.body.scene);
 
@@ -130,6 +132,9 @@ app.post("/threejs", async (req, res) =>
             child.on("close", (code) => {
                 console.log((id < 10 ? "0" : "") + id + ": child process exited with code", code);
             });
+            */
+           
+            res.send(pyData);
         }
         py.kill();
     });
