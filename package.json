@@ -1,8 +1,8 @@
 {
-  "name": "arshadow",
+  "name": "ashe",
   "version": "1.0.0",
   "description": "",
-  "main": "public/server.js",
+  "main": "public/ar-app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon public/server.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andrelbdutra/ARShadow.git"
+    "url": "git+https://github.com/AVRGroup/AShE"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/andrelbdutra/ARShadow/issues"
+    "url": "https://github.com/AVRGroup/AShE/issues"
   },
-  "homepage": "https://github.com/andrelbdutra/ARShadow#readme",
+  "homepage": "https://github.com/AVRGroup/AShE#readme",
   "dependencies": {
     "body-parser": "^1.20.2",
     "canvas": "^2.11.2",
