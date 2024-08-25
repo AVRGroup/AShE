@@ -344,10 +344,10 @@ document.getElementById("select2").addEventListener("change", async () => {
                 setNewSource('image', "my-images/real_img_25.jpeg");
                 break;  
             case '17':
-                setNewSource('video', "my-videos/vid_5.mp4");
+                setNewSource('video', "my-videos/vid_37.MOV"); // 27, 31, 37, 48
                 break;   
             case '18':
-                setNewSource('video', "my-videos/vid_6.mp4");
+                setNewSource('video', "my-videos/vid_48.MOV");
                 break;         
         }
     }
@@ -408,10 +408,10 @@ returnBtn.addEventListener('click', async () => {
             setNewSource('image', "my-images/real_img_25.jpeg");
             break;  
         case '17':
-            setNewSource('video', "my-videos/vid_5.mp4");
+            setNewSource('video', "my-videos/vid_37.MOV");
             break;   
         case '18':
-            setNewSource('video', "my-videos/vid_6.mp4");
+            setNewSource('video', "my-videos/vid_48.MOV");
             break;       
     }
 
