@@ -305,10 +305,10 @@ document.getElementById("select2").addEventListener("change", async () => {
                 setNewSource('image', "my-images/new_imagem_4.jpg");
                 break;
             case '4':
-                setNewSource('image', "my-images/new_imagem_6.jpg"); 
+                setNewSource('image', "my-images/imagem_4.jpg"); 
                 break;
             case '5':
-                setNewSource('image', "my-images/new_imagem_7.jpg");
+                setNewSource('image', "my-images/imagem_7.jpg");
                 break;
             case '6':
                 setNewSource('image', "my-images/new_imagem_8.jpg");
@@ -317,7 +317,7 @@ document.getElementById("select2").addEventListener("change", async () => {
                 setNewSource('image', "my-images/new_imagem_9.jpg"); 
                 break;
             case '8':
-                setNewSource('image', "my-images/new_imagem_10.jpg"); 
+                setNewSource('image', "my-images/imagem_1.jpg"); 
                 break;
             case '9':
                 setNewSource('image', 'my-images/img_extobj_1.jpeg');
@@ -369,10 +369,10 @@ returnBtn.addEventListener('click', async () => {
             setNewSource('image', "my-images/new_imagem_4.jpg");
             break;
         case '4':
-            setNewSource('image', "my-images/new_imagem_6.jpg"); 
+            setNewSource('image', "my-images/imagem_4.jpg"); 
             break;
         case '5':
-            setNewSource('image', "my-images/new_imagem_7.jpg");
+            setNewSource('image', "my-images/imagem_7.jpg");
             break;
         case '6':
             setNewSource('image', "my-images/new_imagem_8.jpg");
@@ -381,7 +381,7 @@ returnBtn.addEventListener('click', async () => {
             setNewSource('image', "my-images/new_imagem_9.jpg"); 
             break;
         case '8':
-            setNewSource('image', "my-images/new_imagem_10.jpg"); 
+            setNewSource('image', "my-images/imagem_1.jpg"); 
             break;
         case '9':
             setNewSource('image', 'my-images/img_extobj_1.jpeg');
@@ -390,7 +390,7 @@ returnBtn.addEventListener('click', async () => {
             setNewSource('image', 'my-images/img_extobj_3.jpeg');
             break;
         case '11':
-            setNewSource('image', 'my-images/img_extobj_4.jpeg');
+            setNewSource('image', 'my-images/img_extobj_4.jpeg'); 
             break;
         case '12':
             setNewSource('image', 'my-images/img_extobj_5.jpeg');
@@ -408,11 +408,11 @@ returnBtn.addEventListener('click', async () => {
             setNewSource('image', "my-images/real_img_25.jpeg");
             break;  
         case '17':
-            setNewSource('video', "my-videos/vid_1.mp4");
+            setNewSource('video', "my-videos/vid_1.mp4"); 
             break;   
         case '18':
             setNewSource('video', "my-videos/vid_2.mp4");
-            break;       
+            break;         
     }
 
     if(currentFile != 'cube'){
@@ -708,15 +708,16 @@ document.getElementById("submitButtonInput").addEventListener("click", async () 
         console.log("Direção da Luz:", light.position, light.target.position);
 
         //Salvar imagens de depuração
-        // const debugImages = result.debugImages;
-        // Object.keys(debugImages).forEach(key => {
-        //     const base64Image = debugImages[key];
-        //     const imgElement = document.createElement("img");
-        //     imgElement.src = "data:image/png;base64," + base64Image;
-        //     imgElement.style.width = "200px";
-        //     imgElement.style.height = "200px";
-        //     document.body.appendChild(imgElement);
-        // });
+        const debugImages = result.debugImages;
+        Object.keys(debugImages).forEach(key => {
+            const base64Image = debugImages[key];
+            const imgElement = document.createElement("img");
+            imgElement.src = "data:image/png;base64," + base64Image;
+            imgElement.style.width = "200px";
+            imgElement.style.height = "200px";
+            imgElement.style.zIndex = "10002";
+            document.body.appendChild(imgElement);
+        });
         
         if (AR.source.parameters.sourceType === "video") {
             AR.source.domElement.play(); // Despausar o vídeo após a geração da sombra
