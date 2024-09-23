@@ -707,17 +707,17 @@ document.getElementById("submitButtonInput").addEventListener("click", async () 
         console.log("Posição de Tela do Centro de Massa do Objeto:", object_center);
         console.log("Direção da Luz:", light.position, light.target.position);
 
-        //Salvar imagens de depuração
-        const debugImages = result.debugImages;
-        Object.keys(debugImages).forEach(key => {
-            const base64Image = debugImages[key];
-            const imgElement = document.createElement("img");
-            imgElement.src = "data:image/png;base64," + base64Image;
-            imgElement.style.width = "200px";
-            imgElement.style.height = "200px";
-            imgElement.style.zIndex = "10002";
-            document.body.appendChild(imgElement);
-        });
+        // //Salvar imagens de depuração
+        // const debugImages = result.debugImages;
+        // Object.keys(debugImages).forEach(key => {
+        //     const base64Image = debugImages[key];
+        //     const imgElement = document.createElement("img");
+        //     imgElement.src = "data:image/png;base64," + base64Image;
+        //     imgElement.style.width = "200px";
+        //     imgElement.style.height = "200px";
+        //     imgElement.style.zIndex = "10002";
+        //     document.body.appendChild(imgElement);
+        // });
         
         if (AR.source.parameters.sourceType === "video") {
             AR.source.domElement.play(); // Despausar o vídeo após a geração da sombra

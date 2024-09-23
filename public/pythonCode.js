@@ -58,38 +58,32 @@ def analyze_segments_for_shadows(image, labels, nb_classes):
     return shadow_mask
 
 def apply_grabcut(image, random_seed=42, iterations=5):
+    cv.setRNGSeed(0)
     if image is None:
         return None
+    # Definir uma semente aleatória fixa
+    np.random.seed(random_seed)
 
-    # Inicializar variáveis para armazenar o melhor resultado
-    best_mask2 = None
-    min_foreground_pixels = float('inf')
+    # Inicializar a máscara e o modelo de background/foreground
+    mask = np.zeros(image.shape[:2], np.uint8)
+    bgdModel = np.zeros((1, 65), np.float64)
+    fgdModel = np.zeros((1, 65), np.float64)
 
-    for _ in range(iterations):
-        # Definir uma semente aleatória fixa
-        np.random.seed(random_seed)
+    # Retângulo que cobre a maior parte, mas não toda, da imagem
+    rect = (10, 10, image.shape[1] - 20, image.shape[0] - 20)
 
-        # Inicializar a máscara e o modelo de background/foreground
-        mask = np.zeros(image.shape[:2], np.uint8)
-        bgdModel = np.zeros((1, 65), np.float64)
-        fgdModel = np.zeros((1, 65), np.float64)
+    # Aplicar GrabCut
+    cv.grabCut(image, mask, rect, bgdModel, fgdModel, 25, cv.GC_INIT_WITH_RECT)
 
-        # Retângulo que cobre a maior parte, mas não toda, da imagem
-        rect = (10, 10, image.shape[1] - 20, image.shape[0] - 20)
+    # Transformar a máscara para binário onde o foreground é 1
+    # Pixels com 2 e 0 são background, 1 e 3 são foreground
+    mask2 = np.where((mask == 2) | (mask == 0), 0, 1).astype('uint8')
 
-        # Aplicar GrabCut
-        cv.grabCut(image, mask, rect, bgdModel, fgdModel, 10, cv.GC_INIT_WITH_RECT)
+    # Criar a imagem de foreground usando a máscara
+    foreground = image * mask2[:, :, np.newaxis]
 
-        # Transformar a máscara para binário onde o foreground é 1
-        mask2 = np.where((mask == 2) | (mask == 0), 0, 1).astype('uint8')
-
-        # Contar o número de pixels do foreground (pixels brancos)
-        foreground_pixels = np.count_nonzero(mask2)
-
-        # Manter a máscara com o menor número de pixels brancos
-        if foreground_pixels < min_foreground_pixels:
-            min_foreground_pixels = foreground_pixels
-            best_mask2 = mask2
+    # A máscara deve ser multiplicada por 255 para visualização correta
+    return foreground, mask2 * 255
 
     # Criar a imagem de foreground usando a melhor máscara encontrada
     foreground = image * best_mask2[:, :, np.newaxis]
