@@ -344,7 +344,7 @@ document.getElementById("select2").addEventListener("change", async () => {
                 setNewSource('image', "my-images/real_img_25.jpeg");
                 break;  
             case '17':
-                setNewSource('video', "my-videos/vid_1.mp4"); 
+                setNewSource('video', "my-videos/vid_15.mp4"); 
                 break;   
             case '18':
                 setNewSource('video', "my-videos/vid_2.mp4");
@@ -408,7 +408,7 @@ returnBtn.addEventListener('click', async () => {
             setNewSource('image', "my-images/real_img_25.jpeg");
             break;  
         case '17':
-            setNewSource('video', "my-videos/vid_1.mp4"); 
+            setNewSource('video', "my-videos/vid_15.mp4"); 
             break;   
         case '18':
             setNewSource('video', "my-videos/vid_2.mp4");
