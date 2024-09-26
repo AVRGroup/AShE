@@ -345,10 +345,7 @@ document.getElementById("select2").addEventListener("change", async () => {
                 break;  
             case '17':
                 setNewSource('video', "my-videos/vid_15.mp4"); 
-                break;   
-            case '18':
-                setNewSource('video', "my-videos/vid_2.mp4");
-                break;         
+                break;           
         }
     }
 });
@@ -410,9 +407,6 @@ returnBtn.addEventListener('click', async () => {
         case '17':
             setNewSource('video', "my-videos/vid_15.mp4"); 
             break;   
-        case '18':
-            setNewSource('video', "my-videos/vid_2.mp4");
-            break;         
     }
 
     if(currentFile != 'cube'){
