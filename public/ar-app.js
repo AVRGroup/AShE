@@ -1228,44 +1228,44 @@ document.getElementById("submitButtonInput").addEventListener("click", async () 
     //     });
     //   }
 
-        //Cria canvas para capturar a imagem final (cena + sombras)
-        const finalCanvas = document.createElement("canvas");
-        finalCanvas.width = scaledW;
-        finalCanvas.height = scaledH;
-        const finalCtx = finalCanvas.getContext("2d");
+        // //Cria canvas para capturar a imagem final (cena + sombras)
+        // const finalCanvas = document.createElement("canvas");
+        // finalCanvas.width = scaledW;
+        // finalCanvas.height = scaledH;
+        // const finalCtx = finalCanvas.getContext("2d");
 
-        //Desenha a imagem original da câmera
-        finalCtx.drawImage(AR.source.domElement, 0, 0, vw, vh, 0, 0, scaledW, scaledH);
-        const renderCanvas = document.createElement("canvas");
-        renderCanvas.width = scaledW;
-        renderCanvas.height = scaledH;
-        const renderCtx = renderCanvas.getContext("2d");
-        renderer.render(scene, camera);
-        renderCtx.drawImage(
-            renderer.domElement,
-            0, 0, renderer.domElement.width, renderer.domElement.height,
-            0, 0, scaledW, scaledH
-        );
-        finalCtx.drawImage(renderCanvas, 0, 0, scaledW, scaledH);
-        const finalImageDataURL = finalCanvas.toDataURL("image/png");
-        const capturedImage = document.createElement("img");
-        capturedImage.src = finalImageDataURL;
-        capturedImage.style.width = "auto";
-        capturedImage.style.height = "auto";
-        capturedImage.style.border = "2px solid #ccc";
-        capturedImage.style.display = "block";
-        capturedImage.style.margin = "10px auto";
-        document.body.appendChild(capturedImage);
+        // //Desenha a imagem original da câmera
+        // finalCtx.drawImage(AR.source.domElement, 0, 0, vw, vh, 0, 0, scaledW, scaledH);
+        // const renderCanvas = document.createElement("canvas");
+        // renderCanvas.width = scaledW;
+        // renderCanvas.height = scaledH;
+        // const renderCtx = renderCanvas.getContext("2d");
+        // renderer.render(scene, camera);
+        // renderCtx.drawImage(
+        //     renderer.domElement,
+        //     0, 0, renderer.domElement.width, renderer.domElement.height,
+        //     0, 0, scaledW, scaledH
+        // );
+        // finalCtx.drawImage(renderCanvas, 0, 0, scaledW, scaledH);
+        // const finalImageDataURL = finalCanvas.toDataURL("image/png");
+        // const capturedImage = document.createElement("img");
+        // capturedImage.src = finalImageDataURL;
+        // capturedImage.style.width = "auto";
+        // capturedImage.style.height = "auto";
+        // capturedImage.style.border = "2px solid #ccc";
+        // capturedImage.style.display = "block";
+        // capturedImage.style.margin = "10px auto";
+        // document.body.appendChild(capturedImage);
 
-        const downloadLink = document.createElement("a");
-        downloadLink.href = finalImageDataURL;
-        downloadLink.download = "captura_com_sombra.jpg";
-        downloadLink.innerText = "Baixar Imagem";
-        downloadLink.style.display = "block";
-        downloadLink.style.textAlign = "center";
-        downloadLink.style.margin = "10px";
-        downloadLink.style.zIndex = "20000";
-        document.body.appendChild(downloadLink);
+        // const downloadLink = document.createElement("a");
+        // downloadLink.href = finalImageDataURL;
+        // downloadLink.download = "captura_com_sombra.jpg";
+        // downloadLink.innerText = "Baixar Imagem";
+        // downloadLink.style.display = "block";
+        // downloadLink.style.textAlign = "center";
+        // downloadLink.style.margin = "10px";
+        // downloadLink.style.zIndex = "20000";
+        // document.body.appendChild(downloadLink);
         //downloadLink.click();
 
   
@@ -1306,7 +1306,7 @@ function onDocumentMouseClick(event) {
 	if (intersects.length > 0) {
 		var intersect = intersects[0];
 		console.log("Interseção no ponto de clique:", intersect.point);
-		addSphereAtPoint(intersect.point, 0xff0000);
+		//addSphereAtPoint(intersect.point, 0xff0000);
 	} else {
 		console.log("Nenhuma interseção encontrada no ponto de clique.");
 	}
