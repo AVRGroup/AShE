@@ -209,7 +209,7 @@ function forceFullReset() {
     }
 
     const temporarySource = new THREEx.ArToolkitSource({
-        sourceType: 'webcam',
+        sourceType: 'image',
     });
 
     temporarySource.init(function onReady() {
