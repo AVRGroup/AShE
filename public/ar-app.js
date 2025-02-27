@@ -1215,18 +1215,18 @@ document.getElementById("submitButtonInput").addEventListener("click", async () 
         console.log("Posição de Tela do Centro de Massa do Objeto:", object_center);
 
   
-      //Debug images do Pyodide
-      const debugImages = result.debugImages;
-      if (debugImages) {
-        Object.keys(debugImages).forEach(key => {
-          const base64Image = debugImages[key];
-          const dbgImg = document.createElement("img");
-          dbgImg.src = "data:image/png;base64," + base64Image;
-          dbgImg.style.width = "300px";
-          dbgImg.style.height = "auto";
-          document.body.appendChild(dbgImg);
-        });
-      }
+    //   //Debug images do Pyodide
+    //   const debugImages = result.debugImages;
+    //   if (debugImages) {
+    //     Object.keys(debugImages).forEach(key => {
+    //       const base64Image = debugImages[key];
+    //       const dbgImg = document.createElement("img");
+    //       dbgImg.src = "data:image/png;base64," + base64Image;
+    //       dbgImg.style.width = "300px";
+    //       dbgImg.style.height = "auto";
+    //       document.body.appendChild(dbgImg);
+    //     });
+    //   }
 
         //Cria canvas para capturar a imagem final (cena + sombras)
         const finalCanvas = document.createElement("canvas");
