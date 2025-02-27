@@ -73,7 +73,7 @@ def apply_grabcut(image, random_seed=42, iterations=5):
     rect = (10, 10, image.shape[1] - 20, image.shape[0] - 20)
 
     # Aplicar GrabCut
-    cv.grabCut(image, mask, rect, bgdModel, fgdModel, 25, cv.GC_INIT_WITH_RECT)
+    cv.grabCut(image, mask, rect, bgdModel, fgdModel, 5, cv.GC_INIT_WITH_RECT)
 
     # Transformar a máscara para binário onde o foreground é 1
     # Pixels com 2 e 0 são background, 1 e 3 são foreground
@@ -360,6 +360,9 @@ def process_image(image_data, mask_data):
     marked_image = create_image_with_center_marks(combined_mask2, object_center, shadow_center)
 
     debug_images = {
+        "image": cv_to_base64(image),
+        "mask": cv_to_base64(mask),
+        "grabCut_image": cv_to_base64(grabCut_image),
         "grabCut_mask": cv_to_base64(grabCut_mask),
         "segmented_image": cv_to_base64(segmented_image),
         "marked_image": cv_to_base64(marked_image),

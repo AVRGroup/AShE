@@ -43,9 +43,9 @@ scene.add(markerPlane);
 
 // CILINDROS //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Adicionar cilindro esquerdo
-// var leftCylinderGeometry = new THREE.CylinderGeometry(0.75, 0.75, 1.5, 32);
-// var leftCylinderMaterial = new THREE.MeshStandardMaterial({ color: 0x80FF00 }); // Cinza escuro
+// // Adicionar cilindro esquerdo
+// var leftCylinderGeometry = new THREE.CylinderGeometry(0.75, 0.75, 3, 32);
+// var leftCylinderMaterial = new THREE.MeshStandardMaterial({ color: 0xD8BFD8 }); // Cinza escuro
 // var leftCylinder = new THREE.Mesh(leftCylinderGeometry, leftCylinderMaterial);
 // leftCylinder.position.set(-3, 0.75, 0); // Posicionar à esquerda do marcador
 // leftCylinder.castShadow = true; // Permitir que o cilindro projete sombras
@@ -87,23 +87,23 @@ scene.add(markerPlane);
 // leftCone.castShadow = true; // Permitir que o cone projete sombras
 // scene.add(leftCone);
 
-// Adicionar cone à direita do marcador
-var rightConeGeometry = new THREE.ConeGeometry(0.5, 3, 32);
-var rightConeMaterial = new THREE.MeshStandardMaterial({ color: 0xFFFF00 }); // Cinza escuro
-var rightCone = new THREE.Mesh(rightConeGeometry, rightConeMaterial);
-rightCone.position.set(3, 1, 1); // Posicionar à direita do marcador
-rightCone.castShadow = true; // Permitir que o cone projete sombras
-scene.add(rightCone);
+// // Adicionar cone à direita do marcador
+// var rightConeGeometry = new THREE.ConeGeometry(0.5, 3, 32);
+// var rightConeMaterial = new THREE.MeshStandardMaterial({ color: 0xFFFF00 }); // Cinza escuro
+// var rightCone = new THREE.Mesh(rightConeGeometry, rightConeMaterial);
+// rightCone.position.set(3, 1, 1); // Posicionar à direita do marcador
+// rightCone.castShadow = true; // Permitir que o cone projete sombras
+// scene.add(rightCone);
 
 // cubos ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// // Adicionar cubo à esquerda do marcador
-// var leftCubeGeometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
-// var leftCubeMaterial = new THREE.MeshStandardMaterial({ color: 0xD8BFD8 }); // Cinza escuro
-// var leftCube = new THREE.Mesh(leftCubeGeometry, leftCubeMaterial);
-// leftCube.position.set(-2, 0.75, -3); // Posicionar à esquerda do marcador
-// leftCube.castShadow = true; // Permitir que o cubo projete sombras
-// scene.add(leftCube);
+// Adicionar cubo à esquerda do marcador
+var leftCubeGeometry = new THREE.BoxGeometry(1.5, 4, 1.5);
+var leftCubeMaterial = new THREE.MeshStandardMaterial({ color: 0xD8BFD8 }); // Cinza escuro
+var leftCube = new THREE.Mesh(leftCubeGeometry, leftCubeMaterial);
+leftCube.position.set(-2.5, 0.75, -1); // Posicionar à esquerda do marcador
+leftCube.castShadow = true; // Permitir que o cubo projete sombras
+scene.add(leftCube);
 
 // var middleCubeGeometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
 // var middleCubeMaterial = new THREE.MeshStandardMaterial({ color: 0xD8BFD8 }); // Cinza escuro
@@ -129,7 +129,7 @@ var wood = new THREE.MeshLambertMaterial({map: loader.load("wood.png")});
 var cube   = new THREE.BoxGeometry(vObjHeight, vObjHeight * vObjRatio, vObjHeight);
 var vObj        = new THREE.Mesh(cube,   wood);
 vObj.castShadow = true;
-//scene.add(vObj)
+scene.add(vObj)
 
 vObj.position.set(0, vObjRatio * vObjHeight / 2, 0);
 
@@ -138,8 +138,8 @@ var ambientLight = new THREE.AmbientLight(0xffffff, 0.45);
 scene.add(ambientLight);
 
 // Adicionar iluminação direcional com sombras
-var directionalLight = new THREE.DirectionalLight(0xffffff, 1.15);
-directionalLight.position.set(1, 9, -5);
+var directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
+directionalLight.position.set(1.15, 7, -4);
 
 directionalLight.castShadow = true; // Permitir que a luz direcional projete sombras
 scene.add(directionalLight);
